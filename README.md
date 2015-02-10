@@ -7,17 +7,18 @@ Choucroute, knacks, et picon bière
 - Gruntfile for Sass / Less building & minify
 - Knacss
 - Basic Schnapsit index.html
+- Various Grunt options
+- Concat & Uglify Javascript files
 
-## Building :
-- npm install
-- bower update
-- grunt / grunt watch
+## How to start :
+- git clone this repo
+- cd to cloned folder
+- run `npm install`
+- run `bower update`
+- run `grunt` / `grunt watch`
 
-**If you want to use Less instead of default Sass version, just change:**
-`grunt.registerTask('default', ['sass', 'cssmin', 'watch']);`
-to
-`grunt.registerTask('default', ['less', 'cssmin', 'watch']);`
-in Gruntfile.js
+**If you want to use Less instead of default Sass version, just go
+in Gruntfile.js to uncomment lines**
 
 ## Crédits :
 
