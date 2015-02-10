@@ -1,0 +1,6 @@
+{
+    "name": "alstart",
+    "dependencies": {
+        "knacss": "latest"
+    }
+}
