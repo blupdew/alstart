@@ -7,6 +7,8 @@
     "grunt-sass": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-contrib-cssmin": "latest",
-    "grunt-contrib-less": "latest"
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-uglify": "latest"
   }
 }
