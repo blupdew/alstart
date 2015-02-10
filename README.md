@@ -4,7 +4,7 @@ Choucroute, knacks, et picon bière
 ## Features :
 - HTML5 Boilerplate .htaccess file
 - Bower
-- Gruntfile for building / optimisations
+- Gruntfile for Sass / Less building & minify
 - Knacss
 - Basic Schnapsit index.html
 
@@ -18,3 +18,7 @@ Choucroute, knacks, et picon bière
 to
 `grunt.registerTask('default', ['less', 'cssmin', 'watch']);`
 in Gruntfile.js
+
+## Crédits :
+
+GitIgnore Mac OSX Crap : https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
