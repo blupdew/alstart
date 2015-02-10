@@ -16,6 +16,7 @@ module.exports = function (grunt) {
         less: {
           files: {
             './css/style.css': './css/style.less'
+            }
           },
         cssmin: {
             minify: {
@@ -30,7 +31,6 @@ module.exports = function (grunt) {
             files: ['./css/style.scss'],
             tasks: ['sass', 'cssmin'],
         }
-
     });
 
     grunt.loadNpmTasks('grunt-sass');
