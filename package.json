@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "latest",
+    "gulp": "latest",
+    "gulp-sass": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-rename": "latest",
     "grunt-cli": "latest",
     "grunt-sass": "latest",
     "grunt-contrib-watch": "latest",
