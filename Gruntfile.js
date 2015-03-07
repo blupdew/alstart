@@ -9,38 +9,38 @@ module.exports = function (grunt) {
         },
         dist: {
             files: {
-                './css/style.css': './css/style.scss'
+                './assets/css/style.css': './assets/css/style.scss'
             }
           }
         },
         less: {
           files: {
-            './css/style.css': './css/style.less'
+            './assets/css/style.css': './assets/css/style.less'
             }
           },
         cssmin: {
             minify: {
                 expand: true,
-                cwd: './css/',
+                cwd: './assets/css/',
                 src: ['style.css'],
-                dest: './css/',
+                dest: './assets/css/',
                 ext: '.min.css'
             }
         },
         concat: {
             jsfiles: {
-                src: './js/*.js',
-                dest: './js/prod.js'
+                src: './assets/js/*.js',
+                dest: './assets/js/prod.js'
             }
         },
         uglify: {
             jsfiles: {
-                src: './js/prod.js',
-                dest: './js/prod.min.js'
+                src: './assets/js/prod.js',
+                dest: './assets/js/prod.min.js'
             }
         },
         watch: {
-            files: ['./css/style.scss'],
+            files: ['./assets/css/style.scss'],
             tasks: ['sass', 'cssmin'],
         }
     });
