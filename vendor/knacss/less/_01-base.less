@@ -1,15 +1,14 @@
-/*!
-* www.KNACSS.com V3.1.0 (2014-10-20) @author: Raphael Goetter, Alsacreations
-* Licence WTFPL http://www.wtfpl.net/
-*/
-
 /* ----------------------------- */
 /* == soft reset                 */
 /* ----------------------------- */
 
-/* switching box model for all elements */
-* {
+/* switching to border-box model for all elements */
+html {
 	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
 }
 
 /* soft reset */
@@ -29,9 +28,13 @@ ul.unstyled {
 }
 
 img {
-	height: auto;
 	vertical-align: middle;
 	border: 0;
+}
+
+/* height auto only for non SVG images */
+img:not([src$=".svg"]) {
+	height: auto;
 }
 
 blockquote,
@@ -62,7 +65,7 @@ html {
 	
 	/* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
 	/* thanks to @guardian, @victorbritopro and @eQRoeil */
-    font-size: calc(1em * 0.625);
+	font-size: calc(1em * 0.625);
 	
 	/* disallow text zooming on orientation change (non standard property) */
 	-webkit-text-size-adjust: 100%;
@@ -76,7 +79,7 @@ body {
 	
 	background-color: @base-background;
 	color: @base-color;
-	font-family: @font-stack-common;	
+	font-family: @font-stack-common;
 	line-height: @line-height;
 }
 
@@ -100,7 +103,7 @@ th,
 label,
 textarea,
 caption,
-details, 
+details,
 figure {
 	margin-top: 0.75em;
 	margin-bottom: 0;
@@ -141,31 +144,31 @@ h6,
 
 /* alternate font-sizing */
 .smaller {
-	.em(@base-font-size - 4);
+	font-size: 0.6em;
 }
 
 .small {
-	.em(@base-font-size - 2);
+	font-size: 0.8em;
 }
 
 .big {
-	.em(@base-font-size + 2);
+	font-size: 1.2em;
 }
 
 .bigger {
-	.em(@base-font-size + 4);
+	font-size: 1.5em;
 }
 
 .biggest {
-	.em(@base-font-size + 6);
+	font-size: 2em;
 }
 
-code, 
+code,
 pre,
 samp,
 kbd {
 	/* IE fix */
-	white-space: pre-line; 
+	white-space: pre-line;
 	white-space: pre-wrap;
 	font-family: @font-stack-monospace;
 	line-height: normal;
@@ -197,18 +200,14 @@ sup {
 /* ----------------------------- */
 
 /* hidden but not for an assistive technology like a screen reader, Yahoo! method */
-.visually-hidden { 
+.visually-hidden {
 	position: absolute !important;
-    border: 0 !important;
-    height: 1px !important; 
-    width: 1px !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-}
-
-body > script {
-	display: none !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
 }
 
 @media (max-width: @small-screen) {
@@ -229,18 +228,24 @@ body > script {
 
 /* avoid top margins on first content element */
 p,
-.p-like, 
-ul, 
-ol, 
+.p-like,
+ul,
+ol,
 dl,
-blockquote, 
+blockquote,
 pre,
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
-h6 {
+h1,
+.h1-like,
+h2,
+.h2-like,
+h3,
+.h3-like,
+h4,
+.h4-like,
+h5,
+.h5-like,
+h6,
+.h6-like {
 	&:first-child {
 		margin-top: 0;
 	}
@@ -256,14 +261,14 @@ li ol {
 }
 
 /* max values */
-img, 
-table, 
-td, 
-blockquote, 
-code, 
-pre, 
-textarea, 
-input, 
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
 video {
 	max-width: 100%;
 }
@@ -273,98 +278,3 @@ table {
 	margin-bottom: @medium-value;
 }
 
-/* ----------------------------- */
-/* ==layout and modules          */
-/* ----------------------------- */
-
-/* float layout */
-/* module, gains superpower "BFC" Block Formating Context */
-.mod { 
-	overflow: hidden;
-}
-
-/* blocks that needs to be placed under floats */
-.clear,
-.line,
-.row {
-	clear: both;
-}
-
-/* blocks that must contain floats */
-.clearfix,
-.line {
-	&:after {
-		content: "";
-		display: table;
-		clear: both;
-		border-collapse: collapse;
-	}
-}
-
-/* table layout */
-.row {
-	display: table;
-	table-layout: fixed;
-	width: 100%;
-}
-
-.row > *,
-.col {
-	display: table-cell;
-	vertical-align: top;
-}
-
-/* inline-block */
-.inbl {
-	display: inline-block;
-	vertical-align: top;
-}
-
-/* alignments (blocks and inline) */
-/* ------------------------------ */
-
-/* left (or starting) elements */
-.left,
-.start {
-	float: left;
-}
-
-img.left,
-img.start  {
-	margin-right: @small-value;
-}
-
-/* right (or ending) elements */
-.right,
-.end {
-	float: right;
-}
-
-img.right,
-img.end {
-	margin-left: @small-value;
-}
-
-img.left, 
-img.right,
-img.start, 
-img.end {
-	margin-bottom: @tiny-value;
-}
-
-.center    {
-	margin-left: auto; 
-	margin-right: auto;
-}
-
-.txtleft   {
-	text-align: left;
-}
-
-.txtright  {
-	text-align: right;
-}
-
-.txtcenter {
-	text-align: center;
-}
